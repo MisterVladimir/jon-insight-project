@@ -2,6 +2,10 @@
 -e .
 
 # external requirements
+# Install docutils version prior to anything else. This is
+# a workaround to avoid the installation of 0.16, which is
+# incompatible with some but not all of the packages below.
+docutils<0.16
 click
 Sphinx
 coverage
@@ -10,3 +14,10 @@ flake8
 pandas
 numpy
 black
+# missing dependency
+scikit-learn
+geopandas
+matplotlib
+shapely
+seaborn
+streamlit

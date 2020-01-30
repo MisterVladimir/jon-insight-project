@@ -15,6 +15,7 @@ file_name = '/home/jon/PycharmProjects/jon-insight-project/jon_insight_project/f
 
 df = pd.read_pickle(file_name)
 
+# eosg -> epsg
 crs = {'init': 'eosg:4326'}
 
 street_map = gpd.read_file(map_file)

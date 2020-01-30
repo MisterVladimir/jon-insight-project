@@ -1,6 +1,38 @@
+"""
+General comments:
+    I feel like the code here should be moved into `train_model.py` since it only
+    appears to train the model.
+
+    I recommend folding the current code into a few functions, namely,
+
+        def load_trained_model(path_to_serialized_model: str) -> pd.DataFrame:
+            ...
+
+        def preprocess_the_data(data: pd.DataFrame) -> pd.DataFrame:
+            ...
+
+        def fit_linear_regression(x_train: np.ndarray, y_train: np.ndarray) -> LinearRegression:
+            ...
+
+"""
+
 from sklearn.linear_model import LinearRegression
 import numpy as np
 import pandas as pd
+
+# When you're less crunched for time, it might be worth making a
+# `definitions.py` module that contains path names used throughout the code. For example,
+# import os
+# SOURCE_CODE_ROOT = os.path.dirname(os.path.abspath(__file__))
+# REPOSITORY_ROOT = os.path.dirname(SOURCE_CODE_ROOT)
+# TRAINED_MODELS_DIR = os.path.join(REPOSITORY_ROOT, "models")
+# Throughout the repo, the `model_file_name` would just be os.path.join(TRAINED_MODELS_DIR, <name of model>)
+
+# As an aside, the (big) model files would not be checked into Git, but
+# instead I recommend providing simple instructions for training the model, e.g.
+# To train the model, execute the `train_model` script like so:
+# . .venv/bin/activate
+# python -m train_model.py
 
 #file_name = '/home/jon/PycharmProjects/jon-insight-project/data/processed/pa_course_database_processed.plk'
 file_name = '/home/jon/PycharmProjects/jon-insight-project/jon_insight_project/features/all_courses_database_processed.plk'
